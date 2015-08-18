@@ -1,0 +1,66 @@
+﻿<html>
+	<body>
+		<h1>Panel Collection Editor</h1>
+			<ul>
+				<li><strong>Name</strong> - Enter a name for the content item. 
+				This text appears during design mode (configuration).</li>
+
+                <li><strong>Title</strong> - Enter the text to display above 
+                this iPart on the rendered page. If blank, no title displays.</li>
+
+                <li><strong>Do not render in design mode</strong> - Select this option 
+                to prevent content record data from being loaded in the content editor. 
+                This improves performance during design time (configuration).</li>
+
+    <li><strong>iPart CSS class</strong> - (optional) Enter the name of a CSS class that 
+        will be applied to the iPart at runtime. Add this CSS 
+        class to an appropriate style sheet. Using such classes lets you apply special 
+        formatting to targeted iParts in a reusable way.</li>
+                <li><strong>Display a border around this content</strong> - (required for 
+        collapsible panels) Select this option to display a border around this iPart 
+    on the rendered page. </li>
+    <li><strong>Display content within a collapsible panel</strong> - Enable to allow 
+        users to minimize the panel within the page, to work with dense pages more efficiently.</li>
+    <li><strong>Show the content as collapsed </strong>- Enable to display the panel 
+                minimized by default. <i>Tip: </i>Be sure that the <strong>Title</strong> makes 
+                clear what data is hidden from view.</li>
+
+				<li><strong>Use all available panels</strong> adds all existing panels 
+                    in alphabetical order, each on its own tab.</li>
+                    
+                <li><strong>Select individual panels</strong> lets you select a subset of your existing panels and set their tab order in the collection.</li>
+ 
+                <li><strong>Enable scrolling for multi-instance panels</strong> - Select this checkbox to set a height and width for
+                    a multi-instance panel. If the panel exceeds the set dimensions scrolling is enabled.
+                    <ul>
+                        <li><strong>Panel width</strong> - Enter the width in pixels.</li>
+                        <li><strong>Panel height</strong> - Enter the height in pixels.</li>
+                    </ul>
+                </li>  
+                                
+			    <li><strong>Allow users to edit</strong> - Select this checkbox to enable people to 
+                    enter or change their current data; the option lets you set the size of the edit 
+                    window:
+                    <ul>
+                        <li><strong>Edit window width</strong> - Enter the default width, 
+                    in pixels, of the pop-up edit window.</li>
+                        <li><strong>Edit window height</strong> - Enter the default height, 
+                    in pixels, of the pop-up edit window.</li>
+                    </ul>
+                </li>
+			</ul>
+<p><strong>Notes</strong></p>
+<ul>
+    <li><strong>Refreshing other panels on the content record</strong>
+    <ul>
+        <li>You can connect panel-displaying iParts on the same content record so that they 
+            dynamically refresh each other after user edits.</li>
+        <li>To create a connection, edit the content record, select the <strong>Connect</strong> 
+            option from the panel iPart&#39;s title bar menu, create an <strong>Object Consumer</strong> connection, 
+            select a panel iPart from the <strong>Object Provider</strong><em> </em>drop-list, and 
+            select <strong>Connect</strong>. </li>
+        <li>For details, see "<span class="C1HJump">Connecting iParts to refresh panels</span>"
+            <span class="C1HManual"> on the Helpsite</span></li>.</ul>
+    </li>
+    </body>
+</html>

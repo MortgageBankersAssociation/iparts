@@ -1,0 +1,87 @@
+<html>
+	<body>
+		<h1>Event Display</h1>
+			<ul>
+				<li>
+					<strong>Name</strong> - Enter a name for the iPart. This text only 
+					appears during design mode (configuration).
+				</li>
+				<li>
+					<strong>Do not render in design mode</strong> - To boost performance 
+					during design time (configuration), enable this checkbox to prevent 
+					content record data from being loaded in the content editor.
+				</li>
+				<li>
+					<strong>Display a border around this content</strong> - If you want 
+					a border to appear around this iPart on the rendered page, enable this checkbox.
+				</li> 
+				<li>
+					<strong>Event key</strong> - The key of the specific event to be displayed.  
+					<span class="v100only">This comes from the <strong>Event.EventKey</strong> column. </span>
+                    <span class="v10only">This comes from the <strong>Event Code</strong> defined in <strong>iMIS Desktop &gt; Events &gt; 
+                    Define an event</strong>.</span> The key may also be supplied via the URL. A key 
+                    specified in the iPart configuration takes precedence over a key in the URL.</li> 
+				<li>
+					<strong>Width of image</strong> - The width in pixels of the image to be displayed.
+					Smaller pictures are scaled up to this width; larger pictures are scaled down.
+					</li>
+                <ul>
+                    <li><strong>0</strong> - displays the image at full size</li>
+                    <li><strong>1</strong> - hides the image</li>
+				</ul>							        
+                    <li><b>IQA query or folder used when registering someone else</b> - (required if the 
+                        event displayed is enabled for multiple registrations) 
+                        The default query <i>$/EventManagement/DefaultSystem/Queries/Advanced/Event/Registrant Search</i> 
+                        lists the user&#39;s coworkers, but you may need to broaden or tighten its criteria. 
+                        If you write your own query, you must include the following <b>Query Display Columns</b>:
+                    <ul>
+                        <li class="v10only">The <b>NetContact.IMIS ID</b> property. On the <b>Display</b> tab in iQA,
+                            set the <b>Order</b> for this property to <b>1</b>. To hide the <b>ID</b> field in the query 
+                            results, give this property an <b>Alias</b> of <b>code_ID</b>. </li>
+                        <li class="v100only">An iMIS Id property.</li>
+                        <li>A name property, so that it is clear which contact the user is selecting.</li>
+                    </ul>
+                </li>
+			</ul>
+		
+		<p><strong>Notes</strong></p>
+			<ul>
+                <li>Calling events by URL<ul>
+                    <li>If a key value is not set in the configuration page, the iPart looks for the key
+                    in the URL. To include the key in the URL, use the parameter name EventKey, such
+                    as <span class="v10only"><strong>?EventKey=SPR12</strong></span>
+                        <span class="v100only"><strong>?EventKey=72290518-44B9-428B-909D-10142B4B6B9F</strong></span>. A key
+                    specified in the iPart configuration takes precedence over a key in the URL.</li>
+                    <li>If no <strong>Event key</strong> is specified, the iPart hides itself on the page.
+                    </li>
+                    <li>If the URL includes <strong>iSearchResult=true</strong>, an iPart with a valid key
+                    does not hide itself when the event is not found but reports that the event was
+                    deleted.</li>
+                    </ul>
+                </li>
+                <li class="v10only">Defining events in <i>iMIS</i> 
+                    Desktop<ul>
+                        <li class="v10only"><i>Visibility: </i>To make an event appear in the search 
+                            results of any <strong>Common Search</strong> iPart (including <b>Event List</b>), flag it for 
+                            web display in <i>iMIS</i> Desktop: when editing an event, enable <strong>More &gt; Web Options,</strong>
+                            <strong>Show this event on the Web?</strong></li>
+                        <li class="v10only"><i>Multiple registrations: </i><b>Max Registrations per Registrant</b> 
+                            function field does not affect the <b>Register Someone Else</b> feature 
+                            supported in iPart-based sites. </li>
+                        <li class="v10only"><i>Web options: </i>Event iParts do not support the <strong>Web setup wizard</strong> 
+                            options, such as guests, surveys, and registration steps.</li>
+                    </ul>
+                </li>
+				<li class="v10only"> 
+					Setting event pricing<ul>
+                        <li class="v10only">To charge a default fee for an event, create one function that has
+                            <b>Is an Event Option</b> as well as <b>Show this function on the web?</b> 
+                            enabled. </li>
+                        <li class="v10only">To offer a choice of fee levels (such as <i>Full Conference</i> 
+                            versus <i>Exhibition Only</i>), create functions for each level and enable both 
+                            options for each.</li>
+                    </ul>
+                </li>
+			</ul>
+	</body>
+</html>

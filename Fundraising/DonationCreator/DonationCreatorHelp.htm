@@ -1,0 +1,140 @@
+<html>
+<body>
+    <h1>
+        Donation Creator</h1>
+    <ul>
+        <li><strong>Name</strong> - Enter a name for the content item. This text appears during design mode (configuration).</li>
+
+<li><strong>Title</strong> - Enter the text to display above this iPart on the rendered page. If blank, no title displays.</li>
+
+<li><strong>Do not render in design mode</strong> - Select this option to prevent content record data from being loaded in the content editor. This improves performance during design time (configuration).</li>
+        <li><strong>iPart CSS class</strong> - (optional) Enter the name of a CSS class that 
+            will be applied to the iPart at runtime. Add this CSS class to an appropriate 
+                style sheet. Using such classes lets you apply special formatting to targeted iParts in a reusable way.</li>
+
+<li><strong>Display a border around this content</strong> - Select this option to display a border around this iPart on the rendered page.</li>
+        <li><strong>Display content within a collapsible panel</strong> - Enable to allow users to minimize 
+                the panel within the page, to work with dense pages more efficiently.</li>
+                <ul>
+                <li><strong>Show the content as collapsed </strong>- Enable to display the panel minimized by default. 
+                <br /><i>Tip:</i> Be sure that the <strong>Title</strong> makes clear what data is hidden from view.</li>
+                </ul>
+                </li>
+
+        <li class="v10only"><strong>Display the gift distribution description</strong> - If you want to display
+            a detailed description of the donation&#39;s distribution on the rendered page, enable
+            this checkbox. You can find your distribution codes and edit the descriptions in 
+            iMIS Desktop from <strong>Fundraising &gt; Set up tables &gt; Distributions
+                and premiums</strong>. </li>
+        <li class="v100only"><strong>Display the Gift Item description</strong> - If you want to display
+            a detailed description of the donation&#39;s description on the rendered page, enable
+            this checkbox. You can edit the Gift Item descriptions from the <strong>Shop</strong>. Select the Gift Item, then click <strong>(Edit)</strong>. </li>
+        <li><strong>Processing mode</strong> - Donations made through this iPart can be processed
+            in one of two ways. Choose the option that best fits your use of this iPart.
+            <ul>
+                <li><strong>Add donation to the cart</strong> - When selected, donations made through
+                    this iPart are added as an item in the user&#39;s shopping cart. They can then check
+                    out and pay for the donation as well as any other items in their cart.</li> 
+                <li><strong>Process donation immediately</strong> - When selected, donations can be
+                    processed and paid for without using the shopping cart. If this option is selected,
+                    then other iParts need to be added to the content record, with the proper
+                    <strong>Commit sequence</strong> (see below for details).
+                    </li>
+            </ul>
+        </li>
+        <li class="v10only"><b>Distribution</b> -&nbsp; Donations made through your website must be 
+            associated with a valid distribution code defined in iMIS. This code can be 
+            specified in two ways.
+            <ul>
+                <li><b>Set the distribution by an ItemId URL parameter</b> - Indicates that the 
+                    content record containing the Donation Creator will be dynamically populated 
+                    based on the value of an ItemId parameter in the URL. If selected, you must pass 
+                    a valid distribution code to your Donation Creator iPart using a relative link, 
+                    absolute link, or navigation item. The URL parameter is <strong>ItemId=[Distribution code]</strong>.
+            For example, if you want to create an absolute link to a donation page for the BLDG distribution,
+            set the URL to <strong>http://mywebsite.com/donationpage.aspx?ItemId=BLDG</strong>. Or, 
+                    if you want to assign that same parameter from the navigation item instead, 
+                    enter <b>ItemId=BLDG</b> into the <b>URL Parameters</b> field. </li>
+                <li><b>Select a distribution code </b>- Specifies a single distribution code to be 
+                    used for any donations made from the iPart. If selected, this option overrides 
+                    the value of <b>ItemId</b> parameters in the URL.</li>
+            </ul>
+        </li>
+        <li class="v100only"><b>Gift Item</b> -&nbsp; Donations made through your website must be 
+            associated with the <b>Item Code</b> of a <b>Gift Item</b> (create <b>Gift Item</b>&#39;s 
+            from <b>Shop &gt; (Add)</b>). You can associate donations with the required <b>Item 
+            Code</b> in two ways.
+            <ul>
+                <li><b>Set the Gift Item by an ItemId URL parameter</b> - Indicates that the 
+                    content record containing the Donation Creator will be dynamically populated 
+                    based on the value of an ItemId parameter in the URL. If selected, you must pass 
+                    a valid <b>Item Code</b> to your Donation Creator iPart using a relative link, 
+                    absolute link, or navigation item. The URL parameter is <strong>ItemId=[Item 
+                    Code]</strong>.
+            For example, if you want to create an absolute link to a donation page for the BLDG <b>
+                    Gift Item</b>,
+            set the URL to <strong>http://mywebsite.com/donationpage.aspx?ItemId=BLDG</strong>. Or, 
+                    if you want to assign that same parameter from the navigation item instead, 
+                    enter <b>ItemId=BLDG</b> into the <b>URL Parameters</b> field. </li>
+                <li><b>Select a Gift Item </b>- Specifies a single <b>Gift Item</b> to be 
+                    used for any donations made from the iPart. If selected, this option overrides 
+                    the value of <b>ItemId</b> parameters in the URL.</li>
+            </ul>
+        </li>
+        <li><strong>Commit sequence</strong> - Allows you to explicitly define the execution 
+            order of multiple iParts in a content record. The number in this field indicates the processing order for this iPart, relative to 
+            the other iParts in the same content record.  The value must be 0 or greater.  
+            You can leave the default value of 0 if the execution order of iParts is not 
+            a concern. iParts with a value of 0 are processed <i>after</i> any other iParts 
+            with a non-zero <strong>Commit sequence</strong> value that are 
+            on the same content record.  
+            <p>For example, processing a donation immediately requires that multiple iParts are defined in a single content record. 
+                It does not matter the order in which the iParts are defined on the page. In 
+                the scenario outlined below, where the Donation Creator is the first iPart 
+                displayed on the page and the Submit Order Button Link is the last iPart 
+                displayed, the <strong>Commit sequence</strong> value controls the order in which 
+                the iParts are processed. When the donation is &quot;submitted&quot; from the 
+                content record, execution control is given to each iPart based on the 
+            <strong>Commit sequence</strong> value shown in parentheses:
+                <ul>
+                    <li>Donation Creator (2)</li>
+                    <li>Contact Account Creator (1)</li>
+                    <li>Payment Creator (3)</li>
+                    <li>Submit Order Button Link (4 or 0)</li>
+                </ul>
+        </li>
+        <li><b>Item added message (Cart mode)</b> - Enter the message to display when a 
+            donation is successfully added to a user&#39;s cart. This text is only displayed if 
+            the iPart&#39;s <b>Processing mode</b> is <b>Add donation to the cart</b>. </li>
+    </ul>
+   <p><strong>Notes</strong></p>
+    <ul>
+        <li class="v10only">By default, the Donation Creator displays a single, empty <strong>
+            Gift Amount</strong> field. However, you also have the option to display
+            an array of gift amounts from which the user can select, or to display a single
+            <strong>Gift Amount </strong>field that is pre-populated with
+            a gift amount of your choice.
+            To do either of these, first create a <strong>GIFT_AMOUNT</strong> table
+            from <strong>iMIS Desktop &gt; Customers &gt; Set up tables &gt; General lookup/validation</strong>.
+            In the <strong>Code</strong> field, enter the distribution code for which you want 
+            to customize the display. For example, BLDG. The values you enter in the 
+            <strong>Description</strong> field determine what is displayed on the donation webpage:
+            <ul>
+                <li>To display an array of gift amounts, enter a comma-separated list of gift values 
+                    that you want to appear in the list. For example, entering 50,100,200,500 
+                    results in a radio list of those values displayed on the page. To preselect an 
+                    option, precede the number with an asterisk: 15,*25,75. The gift array always displays an option for the user to select <strong>Other</strong>
+                    and enter any amount.</li>
+                <li>To display a single <strong>Gift Amount</strong> field with a pre-populated gift amount, enter a 
+                    single amount. For example, 25.</li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        <strong>Related Helpsite topics</strong></p>
+    <ul>
+        <li class="v10only"><i>Using the Donation Creator</i></li>
+        <li class="v100only"><i>Fundraising</i></li>
+    </ul>
+</body>
+</html>

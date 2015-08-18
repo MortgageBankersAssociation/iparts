@@ -1,0 +1,37 @@
+﻿<html>
+	<body>
+		<h1>File Importer for Web Services</h1>
+
+			<ul>
+				<li><strong>Name</strong> - Enter a name for the content item. This text appears during design mode (configuration).</li>
+
+<li><strong>Title</strong> - Enter the text to display above this iPart on the rendered page. If blank, no title displays.</li>
+
+<li><strong>Do not render in design mode</strong> - Select this option to prevent content record data from being loaded in the content editor. This improves performance during design time (configuration).</li>
+
+<li><strong>Display a border around this content</strong> - Select this option to display a border around this iPart on the rendered page.</li>
+
+				<li>
+			        <strong>File Formats</strong> - Lists the Available file formats that the iPart can import, and lists the file format(s) Selected to appear as an import option on the rendered page. A file format identifies the structure of data within the file, so that iMIS can properly import and process the contents. 
+                    Uploaded files are placed in the the <i>~/UploadedFiles</i> folder, which is 
+                    relative to the iMIS web application directory. This iPart currently includes two formats:
+			        <ul>
+				        <li>
+					        <strong>Standing Order payments file - BACS format</strong> - The content of the uploaded file is converted into a common standing order payment file. Each line of the file is then ready to be matched against the Standing Order commitments made to an organization, who can complete the matching process using the File Viewer For Web Services.
+				        </li>
+				        <li>
+					        <strong>XML file</strong> - If the file is a valid XML format recognized by iMIS SOA Web Services, the 
+                            contents can be processed through the File Viewer For Web Services. Currently 
+                            Friendraising XML files are the only supported format.</li>
+			        </ul>
+                </li>
+			</ul>
+		
+		<p><strong>Notes</strong></p>
+			<ul>
+				<li> 
+					By default, you can upload files up to 10 megabytes in size. You can increase that value by editing the <strong>MaxAllowedContentLength</strong> and <strong>MaxRequestLength</strong> settings of your Web.config file, however any changes you make affect the whole site.
+				</li>
+			</ul>
+	</body>
+</html>

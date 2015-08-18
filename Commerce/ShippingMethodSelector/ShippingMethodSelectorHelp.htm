@@ -1,0 +1,34 @@
+<html>
+	<body>
+		<h1>Shipping Method Selector</h1>
+
+			<ul>
+				<li><strong>Name</strong> - Enter a name for the content item. This text appears during design mode (configuration).</li>
+
+<li><strong>Title</strong> - Enter the text to display above this iPart on the rendered page. If blank, no title displays.</li>
+
+<li><strong>Do not render in design mode</strong> - Select this option to prevent content record data from being loaded in the content editor. This improves performance during design time (configuration).</li>
+
+<li><strong>Display a border around this content</strong> - Select this option to display a border around this iPart on the rendered page.</li>
+
+			
+
+			</ul>
+
+		<p><strong>Notes</strong></p>
+			<ul>
+				<li>The Shipping method options depend on the address to which the item is to be 
+                    shipped. If an address is for a country for which no default ship method set has 
+                    been indicated, then a message will appear that &#39;You cannot ship to this 
+                    country.&#39;</li>
+                <li>The Shipping Method Selector iPart uses the Address Selector iPart to provide 
+                    the functionality for selecting and adding shipping addresses.<br />
+    				The <strong>Manage addresses</strong> link on the Address Selector iPart displays the <strong>Account Profile</strong> page. 
+	    			</li>
+                <li>The <strong>Account Profile</strong> page is hardcoded to the content page "@/iMIS/ContactManagement/ContactLayouts/Account_Page". 
+                    The URL parameter "AccountPages=Personal" is also passed.
+				</li>
+			</ul>                      
+                       
+    </body>
+</html>

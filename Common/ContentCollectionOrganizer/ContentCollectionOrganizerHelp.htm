@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Content Collection Organizer iPart Configuration</title>
+</head>
+<body>
+    <h1>Content Collection Organizer</h1>
+    <ul>
+        <li><strong>Name</strong> - Enter a name for the content item. This text appears during design mode (configuration).</li>
+
+<li><strong>Title</strong> - Enter the text to display above this iPart on the rendered page. If blank, no title displays.</li>
+
+<li><strong>Do not render in design mode</strong> - Select this option to prevent content record data from being loaded in the content editor. This improves performance during design time (configuration).</li>
+
+<li><strong>Display a border around this content</strong> - Select this option to display a border around this iPart on the rendered page.</li>
+
+        <li><strong>Function as wizard - </strong>Select this option to display the iPart as 
+            a workflow (wizard). If not selected, the iPart displays tabs for content items. 
+            If this option is selected, the following item displays.</li>
+        <li><strong>Steps must be sequential</strong> (available if <strong>Function as wizard
+            </strong>option is selected) - Select this option if your workflow has fixed sequential steps. 
+            </li>
+<li>
+    <strong>Display style - </strong>Select one of the following to specify the style of display:
+    <ul>
+        <li><strong>Horizontal Top - </strong>Displays content defined for each tab/step in horizontal tabs across page.</li>
+        <li><strong>Numbered Steps - </strong>(available if <strong>Function as wizard</strong> option is selected) 
+            Displays each step with <strong>Step Name</strong> and <strong>Step x of y</strong> 
+            at the top of the content record defined for each step.</li>
+        <li><strong>Unnumbered Steps - </strong>(available if <strong>Function as wizard</strong> option is selected) 
+            Displays each step with only the <strong>Step Name</strong> at the top of the content record defined 
+            for each step.</li>
+    </ul>
+</li>
+
+        <li>Click <strong>+</strong> to add a tab/step.</li>
+        <li>Enter the <strong>Tab/Step Name</strong> to display.</li>
+        <li>Browse for <strong>Content to display</strong>. When selecting a content record 
+            to display, keep in mind that access to content records can be limited by 
+            security. To prevent errors, make sure that the content records you select can 
+            be accessed by the intended users. <i>Access Settings</i> are defined when 
+            editing a content record from <i>Content designer &gt; Manage content</i>.</li>
+        <li>Click <strong>Preview</strong> to check the data to be displayed. </li>
+        <li><strong>Next step on success - </strong>(available if <strong>Function as wizard
+                    </strong>option is selected and <strong>Steps must be sequential</strong> option is 
+                    <i>not</i> selected) 
+                Select the step to display if the current step is successful.</li>
+        <li><strong>Next step on failure</strong> - (available if <strong>Function as wizard 
+                    </strong>option is selected and <strong>Steps must be sequential</strong> option is 
+                    <i>not</i> 
+                selected) Select the step to display if the current step fails. Default = remain on the current step.</li>
+        <li><strong>Hide this step</strong> - (available if <strong>Function as wizard
+                    </strong>option is selected) Select this option to hide the step to the user (does not display). 
+                This allows you to attach any action iParts without user intervention. For 
+                example, you might want to send an email message when a certain step is 
+                complete.</li>
+        <li><strong>Move left</strong> - Click to move the selected tab/step to the left 
+            (changes display/process order).</li>
+        <li><strong>Move right</strong> - Click to move the selected tab/step to the right 
+            (changes display/process order).</li>
+    </ul>
+    <p><strong>Notes</strong></p>
+    <ul>
+        <li>When displaying multiple Content Collection Organizer (CCO) iParts on a single web page, you must configure each
+            CCO iPart to have a unique <strong>Name.</strong></li>
+        <li>You can create links to specific tabs of your CCO
+            iPart using URL parameters. The parameter is either passed through from the webpage&#39;s
+            navigation item or from a direct link to the page, and it can be built using either
+            the tab name or tab index. The available URL parameters are <strong>[iPart Name]=[Tab name]</strong>
+            and <strong>[iPart Name]=[tab index]</strong>. For example, if you want to create a link directly
+            to the <strong>Giving History</strong> tab of your <strong>Account Pages</strong> CCO iPart, set the URL to <strong>http://mywebsite.com/Account_Page.aspx?Account_Pages=Giving
+            History</strong>. Or, if you want to attach that same parameter to the navigation item instead,
+            enter <strong>Account_Pages=Giving History</strong> into the navigation item&#39;s <strong>URL Parameters</strong> field.
+            You also have the option to link by the tab index. For example, if the <strong>Giving History</strong>
+            tab is the second tab displayed, use <strong>Account_Pages=2</strong>.
+            <p>
+                When creating a link to a tab, keep the following guidelines in mind:</p>
+            <ul>
+                <li>Use the iPart <strong>Name</strong> and <strong>Tab name</strong> defined within the configuration page of your CCO iPart.</li>
+                <li>Replace any spaces in the iPart <strong>Name</strong> with underscores.</li>
+                <li>Enter the exact <strong>Tab name</strong>, including spaces.</li>
+                <li>Direct tab linking does not work when the option <strong>Function as wizard</strong> is enabled.</li>
+                <li>If you change the iPart <strong>Name</strong>, <strong>Tab name</strong>, or tab order, you may need to update any
+                    navigation items or links that point to that tab.</li>
+            </ul>
+        </li>
+    </ul>
+        </body>
+</html>

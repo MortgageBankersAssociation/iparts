@@ -1,0 +1,116 @@
+﻿<html>
+<head>
+</head>
+	<body>
+		<h1>Common Search</h1>
+    <p>Many Search iPart settings can be overwritten in a URL parameter by using the
+        Content Item Key (GUID). The URL parameter override affects all Search iParts on a page.</p>
+    <ul>
+        <li><strong>Name</strong> - Enter a name for the content item. This text appears during design mode (configuration).</li>
+
+<li><strong>Title</strong> - Enter the text to display above this iPart on the rendered page. If blank, no title displays.</li>
+
+<li><strong>Do not render in design mode</strong> - Select this option to prevent content record data from being loaded in the content editor. This improves performance during design time (configuration).</li>
+
+<li><strong>Display a border around this content</strong> - Select this option to display a border around this iPart on the rendered page.</li>
+
+    </ul>
+    <p><strong>Search Area Settings - </strong><i>hides or shows the Search field, to 
+        let users broaden or narrow results</i></p>
+      
+    <ul>
+        <li><strong>Search Label -</strong> Enter the text to display next to the search field. This can be overwritten 
+            by a URL parameter (attribute name = <i>SearchLabel</i>).</li>
+        <li><strong>Display Search Area Options -</strong> Select the items to display in the <strong>Search 
+            Area</strong> drop-down list. This can be overwritten by a URL parameter (attribute name =
+            <i>DisplayAreaOptions</i> plus GUID for area as displayed in Design view).</li>
+        <li><strong>Options to Display -</strong> Enter a comma-separated list of the<strong> Search Area</strong> 
+            options to display in a drop-down list for user selection. The <strong>All</strong><i> </i>
+            selection displays all content records. If no options are selected, the 
+            drop-down list does not display and the <strong>Initial Search Area</strong> is used for 
+            display. This can be overwrittenby a URL parameter(attribute name = <i>Options </i>plus GUID 
+            for area as displayed in Design view). </li>
+        <li><strong>Display Search Text Box - </strong>Select this option to display a <strong>Search</strong> text 
+            box. This can be overwritten by a URL parameter (attribute name =&nbsp;<i>DisplayTextBox</i>).</li>
+    </ul>
+    <p><strong>Initial/Default Display Settings </strong>- <i>skips or sets initial 
+        settings, to narrow results to an area or value</i></p>
+       
+    <ul>
+        <li><strong>Run Search for Initial Display </strong>- Select this option to 
+            automatically run a specified search on page load for the user&#39;s initial view. 
+            If not selected, search is not run until the user clicks the <strong>Go</strong> button. This 
+            can be overwritten by a URL parameter (attribute name =<i>InitialDisplay</i>).</li>
+        <li><strong>Initial Search Area </strong>- Select a search area to display when <strong>Run 
+            Search for Initial Display</strong> is selected or when <strong>Display Search Text Box</strong> 
+            is <i>not</i> selected. Only one area may be selected. This can be overwritten 
+            by a URL parameter (attribute name = <i>InitialArea</i>).</li>
+        <li><strong>Initial Search Text - </strong>Enter the text filter for search results when
+            <strong>Run Search for Initial Display</strong> is selected. This can be overwritten by a URL 
+            parameter (attribute name = <i>InitialText</i>).</li>
+        <li><strong>Initial Search Text Logic</strong> - Specify the logic to be applied to 
+            multiple text filters and selected tags when <strong>Run Search for Initial Display</strong> is selected. 
+            For example, you can specify &quot;Committee <strong>And</strong> Chair&quot; or &quot;Committee <strong>Or</strong> 
+            Chair&quot; to return the appropriate search results. The default value is <strong>And</strong>. 
+            This can be overwritten by a URL parameter (attribute name 
+            = <i>InitialLogic</i>).</li>
+    </ul>
+
+    <p><strong>Add New Item Settings</strong> - <i>shows an Add link to create related content</i></p>
+    <ul>
+        <li><strong>Content Item for Add</strong> - Enter the content 
+            item code to display an Add link 
+            for the content item. This property is enabled only if: <i>Initial Search Area</i> is not &quot;All&quot; And Display Search Area Options is disabled. 
+            This can be overwritten by a URL parameter (attribute name 
+            = <i>AddContentItem</i>). <br /><i>Note</i><strong>:</strong> Allowed URL values are Content Item Key (GUID) or Content Item Code (string).</li>
+    </ul>
+    
+    <p><strong>Search Results Settings</strong> - <i>controls how search results and 
+        messages appear to users</i></p>
+       
+    <ul>
+        <li><strong>No Results Found Message - </strong>Enter text for the message to display if no results are 
+            found. The default value is set by the system parameter <i>SE.NoResultsMessage</i>. 
+            This can be overwritten by a URL parameter (attribute name = <i>NoResultMsg</i>).</li>
+        <li><strong>General Error Message</strong> - Enter text for the message to display if search failed. The 
+            default value is set by the system parameter <i>SE</i>. Include &#39;{0}&#39; to 
+            display the specific system error message. This can be overwritten
+            by a URL parameter (attribute name = <i>ErrorMsg</i>).</li>
+        <li><strong>Results to Display per Page</strong> - Enter the number of results to display per 
+            page. 0 = display all results. The default value is set by the system parameter 
+            <i>SE</i>. This can be overwritten by a URL parameter (attribute name = <i>PageSize</i>).</li>
+        <li><strong>Maximum Results to Display</strong> - Enter the maximum number of results allowed for display. The default value is set by the system parameter 
+            <i>SE</i>. This can be overwritten by a URL 
+            parameter (attribute name =<i>MaxResults</i>).</li>
+        <li><strong>Maximum Results Exceeded Message</strong> - Enter the message to display if 
+            the number of results exceeds the maximum allowed by <strong>Maximum Results to Display</strong>. 
+            The default value is set by the system parameter <i>SE.ExceedMax</i>. 
+            This can be overwritten by a URL parameter (attribute name = <i>ExceedResultsMsg</i>).</li>
+        <li><strong>Sort Order</strong> - Select the sort order method for search results. The date options are based on the Publication 
+            Date/Created Date/Start Date in the item&#39;s metadata. This can be overwritten
+            by a URL parameter (attribute name = <i>Sort</i>).</li>
+        <li><strong>Selected Tags&nbsp;</strong>-  (optional) Select 
+            tags to apply to content created in this iPart. Tags are helpful for a user to filter search results 
+            and for an administrator to identify content. This can be overwritten
+            by a URL parameter (attribute 
+            name = <i>Tags</i> plus GUID for area as displayed in Design view).</li>
+    </ul>
+    <!-- removed from UI
+    <p>
+        <strong>Other URL Configuration Parameters</strong></p>
+    <ul>
+        <li><strong>Debug mode</strong> - Select this mode to switch from RunTime mode to 
+            Debug mode and display all current iPart settings for review. This can be 
+            overwritten by a URL parameter (attribute 
+            name =&nbsp;<i>Debug</i>). </li>
+        <li><strong>iOwnerKey</strong> - If needed, use the <i>iOwner 
+            Key</i> to assign ownership to items created through the <strong>Add</strong> action link on this iPart.  When 
+            <i>iOwnerKey</i> is present in the URL of 
+            a page containing this iPart, the <i>iOwnerKey</i> parameter and value will be passed in the URL to the 
+            page which performs the add function.</li>
+    </ul>
+    -->
+</body>
+</html>
+
+    

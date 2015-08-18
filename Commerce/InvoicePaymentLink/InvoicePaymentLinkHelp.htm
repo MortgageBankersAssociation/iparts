@@ -1,0 +1,75 @@
+<html>
+<body>
+	<h1>Invoice Payment Link</h1>
+		<ul>
+			<li><strong>Name</strong> - Enter a name for the content item. 
+			This text only appears during design mode (configuration).</li>
+
+			<li><strong>Title</strong> - Enter the text to display above this 
+			iPart on the rendered page. If blank, no title displays.</li>
+
+			<li><strong>Do not render in design mode</strong> - Enable this option 
+			to prevent content record data from being loaded in the content editor. 
+			This improves performance during design time (configuration).</li>	
+            
+            <li><strong>Display a border around this content</strong> - Select this 
+            option to display a border around this iPart on the rendered page.</li>
+            <li><strong>Button text</strong> - Enter the text to display on the button users click to add 
+                invoices to their cart.</li>
+            <li><strong>Message</strong> - Enter text to be displayed above the button. For 
+                example, you could enter a message that explains to users what to expect when 
+                they click the button.</li>
+		    <li class="v100only"><strong>Choose the types of invoices to include</strong>
+		        <ul>
+		            <li><strong>Standard</strong> - Standard invoices include items such as open invoices for 
+		                customer purchases. </li>
+		            <li><strong>Renewal</strong> - Renewal invoices include unpaid membership fees and 
+		                subscriptions.</li>
+		        </ul>
+		    </li>
+		    <li><strong>Display options when no invoices are due</strong> - Select the option for how the iPart 
+                is displayed when no open invoices are due.
+		        <ul>
+		            <li><strong>Hide button and Message</strong> - When no invoice is due, the button and 
+                        <i>Message</i> are hidden.</li>
+		            <li><strong>Show disabled button and No open invoice message</strong> - When no invoice is due, a disabled button and the 
+                        <i>No open invoice message</i> are displayed.</li>
+		        </ul>		    
+            </li>            
+			<li><strong>No open invoice message</strong> - Enter a message to be displayed when no invoice is due.</li>            
+		</ul>		
+<p><strong>Notes</strong></p>
+<ul>
+    <li>The iPart displays a conditional button to pay an outstanding renewal invoice. 
+    When the user clicks the button, the renewal item is placed into the cart. Users do not have the option to selectively pay for individual line items within the invoice. 
+        </li>
+    
+    <li class="v10only">The button displays only if the signed in user has an unpaid renewal invoice
+        that is not already in the cart for items such as membership fees or subscriptions. </li>
+    <li class="v10only"><b>Note for organizations that process renewal billings and use 
+        accrual-based accounting</b>: Currently, this iPart can only be used to pay for 
+        the most recently billed renewal invoice. Unpaid invoices for previously billed 
+        renewal billings cannot be paid with this iPart. This may be an issue if your 
+        organization has closely-recurring billing cycles, or if some of your users 
+        renew multiple memberships through your organization and those memberships have 
+        different billing cycles.</li>
+        
+    <li class="v100only">The button <em>displays</em> only if there is an outstanding invoice that is not already 
+        in the cart for one of the following contacts:
+        <ul>
+                <li>The signed in user</li>
+                <li>The contact currently selected as <strong>On Behalf Of</strong></li>
+                <li>The contact whose record is being viewed (the button is disabled)</li>
+                <li>The button is <em>enabled</em> only if the contact with the outstanding invoice is 
+        signed in directly or <strong>On Behalf Of</strong>. Clicking the button adds the renewal to 
+        the cart of that contact. If a page containing a contact key in the URL displays a contact that is 
+        neither signed in nor selected for On Behalf Of, then the button is disabled. 
+        For example, if Smith signs in and views the account for Jones (who has an outstanding renewal), 
+        then the button is disabled until Smith acts on behalf of Jones.</li>
+        </ul>
+    </li>
+    <li class="v100only">If users have more than one unpaid invoice, all invoices are added to the cart. 
+        Users can select which invoices they want to pay from the cart. </li>
+</ul>
+</body>
+</html>
